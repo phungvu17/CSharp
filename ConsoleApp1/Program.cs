@@ -86,6 +86,27 @@ public class Program
         //tien dien
         //VietNam vn = new VietNam("T2207A","Phung Van Vu ","17/4/2004","Sinh Vien ", 15,"Vietnam" ) ;
         //vn.HienThi();
+         
+        //human
+        Human h = new Human();
+        Human h2 = new Human() { Telephone = "000000" };
+        h.family[0] = " Phung Van Vu";
+        Console.WriteLine(h.family[0]);
+
+        h2[0] = " Vu Phung Van";
+
+        List<string> strs = new List<string>();
+        strs.Add("Hello");
+        Console.WriteLine(strs[0]);
+
+        //phone
+        Phone phonebook = new PhoneBoock();
+        phonebook.insertPhone("John", "123456789");
+        phonebook.insertPhone("Jane", "987654321");
+        phonebook.SearchPhone("John");
+        phonebook.UpdatePhone("Jane", "111111111");
+        phonebook.RemovePhone("John");
+        phonebook.Sort();
 
         //tiendien2
 
