@@ -100,9 +100,9 @@ public class Program
         Console.WriteLine(strs[0]);
 
         //phone
-        Phone phonebook = new PhoneBoock();
-        phonebook.insertPhone("John", "123456789");
-        phonebook.insertPhone("Jane", "987654321");
+        Phone phonebook = new PhoneBook();
+        phonebook.InsertPhone("John", "123456789");
+        phonebook.InsertPhone("Jane", "987654321");
         phonebook.SearchPhone("John");
         phonebook.UpdatePhone("Jane", "111111111");
         phonebook.RemovePhone("John");
@@ -181,6 +181,17 @@ public class Program
         {
             Console.WriteLine("Ma KH: " + khNN.maKH + ", ten KH: " + khNN.hoTen + ", ngay ra HD: " + khNN.ngayRaHD + ", quoc tich: " + khNN.quocTich + ", so luong: " + khNN.soLuong + ", don gia: " + khNN.donGia + ", thanh tien: " + khNN.TinhThanhTien());
         }
+
+        //Inews
+        News news = new News();
+        news.Id = 1;
+        news.Title = "Hello World";
+        news.PublishDate = "21-04-2023";
+        news.Author = "Ngo Manh Son";
+        news.Content = "This is an example news.";
+        int[] rateList = { 3, 4, 5 };
+        news.Calculate(rateList);
+        news.Display();
     }
 
         //Console.WriteLine(" nhập 1 số xem nó là số nguyên tố hay không ");
