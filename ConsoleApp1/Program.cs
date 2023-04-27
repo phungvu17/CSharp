@@ -3,8 +3,97 @@ using T2207A;
 
 
 public class Program
+
 {
     public static void Main(String[] args)
+    {
+        PhoneBook sdt = new PhoneBook();
+
+
+        QuanLySinhVien quanLySinhVien = new QuanLySinhVien();
+        int chucNang = 0;
+        do
+        {
+            Console.WriteLine("Chon chuc nang:");
+            Console.WriteLine("1. Them sinh vien");
+            Console.WriteLine("2. Cap nhat thong tin sv boi ID");
+            Console.WriteLine("3. Xoa sv boi ID");
+            Console.WriteLine("4. Tim kiem sv theo ten");
+            Console.WriteLine("5. Sap xep sv theo diem trung binh (GPA)");
+            Console.WriteLine("6. Sap xep sv theo ten");
+            Console.WriteLine("7. Sap xep sv theo ID");
+            Console.WriteLine("8. Hien thi danh sach sv");
+            Console.WriteLine("0. Thoat");
+            Console.Write("Chon chuc nang: ");
+            chucNang = int.Parse(Console.ReadLine());
+            switch (chucNang)
+            {
+                case 1:
+                    quanLySinhVien.ThemSinhVien();
+                    break;
+                case 2:
+                    quanLySinhVien.CapNhatSinhVien();
+                    break;
+                case 3:
+                    quanLySinhVien.XoaSinhVien();
+                    break;
+                case 4:
+                    quanLySinhVien.TimKiemSinhVien();
+                    break;
+                case 5:
+                    quanLySinhVien.SapXepTheoDiemTrungBinh();
+                    break;
+                case 6:
+                    quanLySinhVien.SapXepTheoTen();
+                    break;
+                case 7:
+                    quanLySinhVien.SapXepTheoID();
+                    break;
+                case 8:
+                    quanLySinhVien.HienThiDanhSachSinhVien();
+                    break;
+                case 0:
+                    Console.WriteLine("Ket thuc");
+                    break;
+                default:
+                    Console.WriteLine("Chuc nang khong ton tai!");
+                    break;
+            }
+            Console.WriteLine();
+        } while (chucNang != 0);
+    }
+        // public static void Main1(String[] args)
+        /// {
+        //    Thread t = new Thread(DemoRun);  //Tham so phai la 1 function
+        // luong chay ngam background, ket thuc khi cac luong khac ket thuc
+        //  t.IsBackground = true;
+
+        //Truyen trong start
+        //  t.Start("Hello");
+        //}
+
+        // static void DemoRun(object o)
+        // {
+        //ep kieu string => string
+        //  string s = (string)o;
+        //  for (int i = 0; i < 200; i++)
+        // {
+        //     lock (o)
+        //    {
+        //        Console.WriteLine(s + " i = " + i);
+        //    }
+
+        //   try
+        //   {
+        //       Thread.Sleep(1000);
+        //   }
+        //   catch (Exception e)
+        //   {
+
+        //    }
+        // }
+        // }
+        public static void Main2(String[] args)
     {
         Console.WriteLine("Hello World");// print
         int x = 10;
