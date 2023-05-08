@@ -5,12 +5,111 @@ using T2207A;
 public class Program
 
 {
+    private static List<Product> products = new List<Product>();
     public static void Main(String[] args)
     {
         PhoneBook sdt = new PhoneBook();
+        while (true)
+        {
+            Console.WriteLine("Product Management Program");
+            Console.WriteLine("1. Add product records");
+            Console.WriteLine("2. Display product records");
+            Console.WriteLine("3. Delete product by Id");
+            Console.WriteLine("4. Exit");
 
+            Console.Write("Enter your choice: ");
+            int choice = int.Parse(Console.ReadLine());
 
-        QuanLySinhVien quanLySinhVien = new QuanLySinhVien();
+            switch (choice)
+            {
+                case 1:
+                    AddProduct();
+                    break;
+                case 2:
+                    DisplayProducts();
+                    break;
+                case 3:
+                    DeleteProduct();
+                    break;
+                case 4:
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice! Try again.");
+                    break;
+            }
+        }
+    }
+
+    static void AddProduct()
+    {
+        Console.WriteLine("Add product records");
+
+        Console.Write("Product ID: ");
+        int id = int.Parse(Console.ReadLine());
+
+        Console.Write("Name: ");
+        string name = Console.ReadLine();
+
+        Console.Write("Price: ");
+        double price = double.Parse(Console.ReadLine());
+
+        Product product = new Product(id, name, price);
+        products.Add(product);
+
+        Console.WriteLine("Product added successfully!");
+        Console.WriteLine();
+    }
+
+    static void DisplayProducts()
+    {
+        Console.WriteLine("Displaying all products:");
+
+        if (products.Count == 0)
+        {
+            Console.WriteLine("No products found.");
+        }
+        else
+        {
+            foreach (Product product in products)
+            {
+                Console.WriteLine(product);
+            }
+        }
+
+        Console.WriteLine();
+    }
+
+    static void DeleteProduct()
+    {
+        Console.WriteLine("Delete product by Id");
+
+        Console.Write("Enter product ID: ");
+        int id = int.Parse(Console.ReadLine());
+
+        bool found = false;
+
+        foreach (Product product in products)
+        {
+            if (product.Id == id)
+            {
+                products.Remove(product);
+                Console.WriteLine("Product deleted successfully!");
+                found = true;
+                break;
+            }
+        }
+
+        if (!found)
+        {
+            Console.WriteLine("Product not found.");
+        }
+
+        Console.WriteLine();
+    }
+}
+
+    QuanLySinhVien quanLySinhVien = new QuanLySinhVien();
         int chucNang = 0;
         do
         {
